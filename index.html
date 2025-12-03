@@ -133,8 +133,9 @@
         amount: 2050,
         currency: "GHS",
         callback: function(response) {
-          window.location.href = "form.html?reference=" + response.reference;
-        },
+  window.location.href = "https://armahemmanuel015-dot.github.io/BCFORM/" + response.reference;
+}
+
         onClose: function() { alert("Payment window closed"); }
       });
       handler.openIframe();
