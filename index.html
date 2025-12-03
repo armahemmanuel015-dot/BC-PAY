@@ -127,18 +127,18 @@
   <script src="https://js.paystack.co/v1/inline.js"></script>
   <script>
     function payWithPaystack() {
-      let handler = PaystackPop.setup({
-        key: "pk_test_1a654bb75fe2d39b626912eb42a2631b52bb0d03",
-        email: "jewelsinthepalace2@gmail.com",
-        amount: 2050,
-        currency: "GHS",
-        callback: function(response) {
-  window.location.href = "https://armahemmanuel015-dot.github.io/BCFORM/index.html";
-}
+  let handler = PaystackPop.setup({
+  key: "pk_test_1a654bb75fe2d39b626912eb42a2631b52bb0d03",
+  email: "jewelsinthepalace2@gmail.com",
+  amount: 2050,
+  currency: "GHS",
+  redirect: "https://armahemmanuel015-dot.github.io/BCFORM/index.html",
+  onClose: function() {
+    alert("Payment window closed");
+  }
+});
+handler.openIframe();
 
-        onClose: function() { alert("Payment window closed"); }
-      });
-      handler.openIframe();
     }
   </script>
 
