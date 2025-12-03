@@ -101,12 +101,27 @@
 <body>
 
   <header>
-    <img src="https://i.ibb.co/XZ65wtcX/Jewels-background-removed.png" alt="JIP Logo" class="logo">
-    <br>
-    <h1>JIP Business Conference 2025</h1>
-    <p>Join this divine meeting for the next level in your business</p>
-    <button onclick="payWithPaystack()">Register Now (GHS 20)</button>
-  </header>
+  <img src="https://i.ibb.co/XZ65wtcX/Jewels-background-removed.png" alt="JIP Logo" class="logo">
+  <h1>JIP Business Conference 2025</h1>
+  <p>Join this divine meeting for the next level in your business</p>
+  <button onclick="payWithPaystack()">Register Now (GHS 20)</button>
+</header>
+
+<style>
+  /* Logo adjustments */
+  header img.logo {
+    width: 80px; /* smaller logo */
+    height: auto;
+    margin-bottom: 20px; /* space between logo and title */
+    position: static; /* remove absolute positioning */
+  }
+
+  /* Adjust header padding if needed */
+  header {
+    padding: 50px 30px 60px 30px;
+  }
+</style>
+
 
   <script src="https://js.paystack.co/v1/inline.js"></script>
   <script>
