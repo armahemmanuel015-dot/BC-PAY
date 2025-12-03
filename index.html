@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JIP Business Conference 2025</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    header {
+      background: #111827;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.5rem;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    /* FORM PAGE */
+    .form-container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 18px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .submit-btn {
+      background: #111827;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LANDING PAGE -->
+  <header>
+    <h1>JIP Business Conference 2025</h1>
+    <p>Register now</p>
+    <button onclick="payWithPaystack()">Register Now (GHS 20)</button>
+  </header>
+
+  <!-- PAYSTACK SCRIPT -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script>
+    function payWithPaystack() {
+      let handler = PaystackPop.setup({
+        key: "pk_test_1a654bb75fe2d39b626912eb42a2631b52bb0d03", // Replace with your Paystack public key
+        email: "armahemmanuel015@gmail.com", // You can collect before payment if needed
+        amount: 2000, // 20 cedis
+        currency: "GHS",
+        callback: function (response) {
+          window.location.href = "form.html?reference=" + response.reference;
+        },
+        onClose: function () {
+          alert("Payment window closed");
+        }
+      });
+      handler.openIframe();
+    }
+  </script>
+
+</body>
+</html>
