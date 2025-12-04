@@ -124,23 +124,32 @@
 </style>
 
 
-  <script src="https://js.paystack.co/v1/inline.js"></script>
-  <script>
-    function payWithPaystack() {
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function payWithPaystack() {
   let handler = PaystackPop.setup({
-  key: "pk_test_1a654bb75fe2d39b626912eb42a2631b52bb0d03",
-  email: "jewelsinthepalace2@gmail.com",
-  amount: 2050,
-  currency: "GHS",
-  redirect: "https://armahemmanuel015-dot.github.io/BCFORM/index.html",
-  onClose: function() {
-    alert("Payment window closed");
-  }
-});
-handler.openIframe();
+    key: "pk_test_1a654bb75fe2d39b626912eb42a2631b52bb0d03", // your public key
+    email: "jewelsinthepalace2@gmail.com",
+    amount: 2050, // amount in pesewas (GHS 20.50)
+    currency: "GHS",
+    callback: function(response) {
+      // optional: show a success message
+      alert("Payment successful! Redirecting...");
 
+      // redirect to your registration form
+      setTimeout(() => {
+        window.location.replace("https://armahemmanuel015-dot.github.io/BCFORM/index.html");
+      }, 500); // slight delay to ensure payment finalization
+    },
+    onClose: function() {
+      alert("Payment window closed. You can try again.");
     }
-  </script>
+  });
+
+  handler.openIframe();
+}
+</script>
+
 
 </body>
 </html>
